@@ -1,0 +1,17 @@
+name: Print GitHub Actions Context
+
+on:
+  workflow_dispatch:
+  
+jobs:
+
+  print-context:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Print GitHub Actions Context
+      run: |
+        echo "GitHub Actions Context:"
+        echo "${{ toJson(github) }}"
